@@ -5,3 +5,4 @@ const FOOD ={
     PORK: "pork",
     FRUIT: "fruit"
 }
+oject.freeze(FOOD);
