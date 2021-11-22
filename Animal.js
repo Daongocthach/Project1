@@ -48,3 +48,4 @@ const GENDER ={
   MALE: "male",
   FEMALE: 'female'
 }
+oject.freeze(GENDER);
