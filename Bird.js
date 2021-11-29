@@ -3,8 +3,8 @@ class Bird extends DvAnTV{
     #_hungry = Normal_Status.HUNGRY;
     #_mood = Normal_Status.MOOD;
     #_flying_points = Math.floor(Math.random() * 11);
-    constructor(name,gender,food){
-        super(name,gender,food);
+    constructor(name,gender,food,age){
+        super(name,gender,food,age);
         Bird.#_number_of_birds++;
     }
     get Flying_points(){
@@ -14,14 +14,14 @@ class Bird extends DvAnTV{
     static get Number_of_birds(){
         return Bird.#_number_of_birds;
     }
-    static Compare_flying_points(bird1,bird1_Name,bird2,bird2_Name){
-        if(bird1 < bird2){
-            document.writeln(bird2_Name + " has better flying skill !<br>");
+    static Compare_flying_points(bird1,bird2){
+        if(bird1.Flying_points < bird2.Flying_points){
+            document.writeln(bird2.Name + " has better flying points than " + bird1.Name + " !<br>");
         }
-        else if(bird1 > bird2){
-            document.writeln(bird1_Name + " has better flying skill !<br>");
+        else if(bird1.Flying_points > bird2.Flying_points){
+            document.writeln(bird1.Name + " has better flying points than " + bird2.Name + " !<br>");
         }
-        else document.writeln(bird1_Name + " and " + bird2_Name + " are equals !<br>");
+        else document.writeln(bird1.Name + " and " + bird2.Name + " are equal !<br>");
     }
     Move(){
         this.#Fly();
