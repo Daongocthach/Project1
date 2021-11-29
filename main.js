@@ -8,3 +8,4 @@ cat.Eat();
 cat.Check_Status();
 let cow = new Cow("Lulu",GENDER.FEMALE,FOOD.GRASS);
 cow.Make_Sound();
+Cat.Catch_Mouse();
