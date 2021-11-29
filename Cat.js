@@ -3,9 +3,10 @@ class Cat extends DvAnThit{
     #_hungry = Normal_Status.HUNGRY;            
     #_mood = Normal_Status.MOOD;
     #_night_vision_point = Math.floor(Math.random() * 11);  //Random cac so tu 0 den 10
-    constructor(name,gender,food){                          //Math.random() tra ve 1 so ngau nhien co gtri tu [0,1)
-        super(name,gender,food);                            //Math.random() ket hop vs Math.floor() co the dc su dung de tra ve so nguyen
+    constructor(name,gender,food,age){                          //Math.random() tra ve 1 so ngau nhien co gtri tu [0,1)
+        super(name,gender,food,age);                            //Math.random() ket hop vs Math.floor() co the dc su dung de tra ve so nguyen
         Cat.#_number_of_cats++;
+        document.writeln("<br>")
     }
     get Night_vision_point(){             //Moi con meo khi dc tao se co diem tam nhin rieng ko thay doi dc nen chi co Get
         return this.#_night_vision_point;
@@ -15,16 +16,16 @@ class Cat extends DvAnThit{
         return Cat.#_number_of_cats;
     }
     static Catch_Mouse(cat){
-        document.writeln(cat + " is catching a mouse ! <br>");      //tu khoa <br> de xuong dong tren trang html
+        document.writeln(cat.Name + " is catching a mouse ! <br>");      //tu khoa <br> de xuong dong tren trang html
     }
-    static Compare_night_vision(cat1,cat1_Name,cat2,cat2_Name){         //Static method
-        if(cat1 < cat2){
-            document.writeln(cat2_Name + " has better night vision !<br>");
+    static Compare_night_vision(cat1,cat2){         //Static method
+        if(cat1.Night_vision_point < cat2.Night_vision_point){
+            document.writeln(cat2.Name + " has better night vision than " + cat1.Name + " !<br>")
         }
-        else if(cat1 > cat2){
-            document.writeln(cat1_Name + " has better night vision !<br>");
+        else if(cat1.Night_vision_point > cat2.Night_vision_point){
+            document.writeln(cat1.Name + " has better night vision than " + cat2.Name + " !<br>")
         }
-        else document.writeln(cat1_Name + " and " + cat2_Name + " are equals !<br>");
+        else document.writeln(cat1.Name + " and " + cat2.Name + " are equal !<br>")
     }
     Meow(){
         document.writeln("Meow !<br>");
