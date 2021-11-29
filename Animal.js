@@ -1,12 +1,20 @@
   class Animal{                                         //Abstract class
   #_name;     //Private fields
   #_gender;
+  #_age;
   constructor(name,gender){
     if(this.constructor === Animal){
       throw new Error("Can't create abstract class !");
     }
   this.Name = name;
   this.Gender = gender;
+  this.Age = age;
+  }
+  set Age(age){
+    this.#_age = age;
+  }
+  get Age(){
+    return this.#_age;
   }
   set Name(name){
     if(name.length <=10 && name.length >0 ){
@@ -31,6 +39,12 @@
   }
   get Gender(){
     return this.#_gender;
+  }
+  static Print_Info(Animal)
+  {
+    document.writeln(Animal.Name +"<br>");
+    document.writeln(Animal.Gender + "<br>")
+    document.writeln(Animal.Age + "<br>")
   }
   Move(){                                                   //Abstract method
     throw new Error("Abstract method is not implemented !");
