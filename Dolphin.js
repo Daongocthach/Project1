@@ -3,19 +3,19 @@ class Dolphin extends DvAnThit{
     #_hungry = Normal_Status.HUNGRY;
     #_mood = Normal_Status.MOOD;
     #_Swimming_speed = Math.floor(Math.random() * 11);
-    constructor(name,gender,food){
-        super(name,gender,food);
+    constructor(name,gender,food,age){
+        super(name,gender,food,age);
         Dolphin.#_number_of_dolphins++;
     }
     static #_number_of_dolphins = 0;
-    static Compare_swimming_speed(d1,d1_name,d2,d2_name){
-        if(d1 < d2){
-            document.writeln(d2_name + " has better night vision !<br>");
+    static Compare_swimming_speed(d1,d2){
+        if(d1.Swimming_speed < d2.Swimming_speed){
+            document.writeln(d2.Name + " has better swimming skill than " + d1.Name + " !<br>");
         }
-        else if(d1 > d2){
-            document.writeln(d1_name + " has better night vision !<br>");
+        else if(d1.Swimming_speed > d2.Swimming_speed){
+            document.writeln(d1.Name + " has better swimming skill than " + d2.Name + " !<br>");
         }
-        else document.writeln(d1_name + " and " + d2_name + " are equals !<br>");
+        else document.writeln(d1.Name + " and " + d2.Name + " are equal !<br>");
     }
     get Number_of_dolphins(){
         return Dolphin.#_number_of_dolphins;
