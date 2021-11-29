@@ -1,7 +1,7 @@
 class DvAnThit extends Animal{
     #_food;
-    constructor(name,gender,food){
-        super(name,gender);                        
+    constructor(name,gender,food,age){
+        super(name,gender,age);                        
         this.Food = food;
     }
     set Food(food){
