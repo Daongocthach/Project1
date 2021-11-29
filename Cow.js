@@ -3,21 +3,22 @@ class Cow extends DvAnTV{
     #_hungry = Normal_Status.HUNGRY;
     #_mood = Normal_Status.MOOD;
     #_size = Math.floor(Math.random() * 11);
-    constructor(name,gender,food){
-        super(name,gender,food);
+    constructor(name,gender,food,age){
+        super(name,gender,food,age);
         Cow.#_number_of_cows++;
+        document.writeln("<br>")
     }
     get Size(){
         return this.#_size;
     }
-    static Compare_Size(cow1,cow1_name,cow2,cow2_name){
-        if(cow1 < cow2){
-            document.writeln(cow2_name + " has better flying skill !<br>");
+    static Compare_Size(cow1,cow2){
+        if(cow1.Size < cow2.Size){
+            document.writeln(cow2.Name + " has larger size than " + cow1.Name + " !<br>");
         }
-        else if(cow1 > cow2){
-            document.writeln(cow1_name + " has better flying skill !<br>");
+        else if(cow1.Size > cow2.Size){
+            document.writeln(cow1.Name + " has larger size than " + cow2.Name + " !<br>");
         }
-        else document.writeln(cow1_name + " and " + cow2_name + " are equals !<br>");
+        else document.writeln(cow1.Name + " and " + cow2.Name + " are equals !<br>");
     }
     static #_number_of_cows = 0;
     static get Number_of_cows(){
