@@ -1,8 +1,8 @@
-  class Animal{                                         //Abstract class
+class Animal{                                         //Abstract class
   #_name;     //Private fields
   #_gender;
-  #_age;
-  constructor(name,gender){
+  #_age
+  constructor(name,gender,age){
     if(this.constructor === Animal){
       throw new Error("Can't create abstract class !");
     }
@@ -21,7 +21,7 @@
       this.#_name = name; 
     }
     else{
-      alert("Invalid name !");
+      alert("Invalid name !");                //Cau lenh alert se xuat ra cua so thong bao tren trang html
       throw new Error("Invalid name !");
     }
   }
@@ -62,4 +62,4 @@ const GENDER ={
   MALE: "male",
   FEMALE: 'female'
 }
-object.freeze(GENDER);
+Object.freeze(GENDER);    //Ko the them truc tiep cac thanh phan khac vao GENDER
