@@ -10,7 +10,7 @@ class DvAnThit extends Animal{
         }
         else{
             alert("Wrong food !");
-            throw new Error("Wrong food !");            //Dung chuong trinh
+            throw new Error("Wrong food !");            //Thong bao loi tren console va dung chuong trinh
         }
     }
     get Food(){
