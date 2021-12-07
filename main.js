@@ -1,11 +1,8 @@
-let cat = new Cat("Bob",GENDER.MALE,FOOD.FISH);
-cat.Move();
+let cat = new Cat("Bob",GENDER.MALE,FOOD.FISH,13);
 cat.Sleep();
-Cat.Catch_Mouse(cat.Name);
-let cat2 = new Cat("Suzy",GENDER.FEMALE,FOOD.PORK);
-Cat.Compare_night_vision(cat.Night_vision_point,cat.Name,cat2.Night_vision_point,cat2.Name);
-cat.Eat();
-cat.Check_Status();
-let cow = new Cow("Lulu",GENDER.FEMALE,FOOD.GRASS);
-cow.Make_Sound();
-Cat.Catch_Mouse();
+cat.Move();
+Animal.Print_Info(cat);
+let cow1 = new Cow("Suzy",GENDER.FEMALE,FOOD.GRASS,15);
+cow1.Check_Status();
+let cow2 = new Cow("Tom",GENDER.MALE,FOOD.GRASS,13);
+Cow.Compare_Size(cow1,cow2); 
