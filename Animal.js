@@ -1,7 +1,7 @@
 class Animal{                                         //Abstract class
   #_name;     //Private fields
   #_gender;
-  #_age
+  #_age;
   constructor(name,gender,age){
     if(this.constructor === Animal){
       throw new Error("Can't create abstract class !");
@@ -11,7 +11,13 @@ class Animal{                                         //Abstract class
   this.Age = age;
   }
   set Age(age){
-    this.#_age = age;
+    if(typeof(age) === 'number'){
+      this.#_age = age;
+    }
+    else{
+      alert("Invalid Age !");
+      throw new Error("Invalid Age !");
+    }
   }
   get Age(){
     return this.#_age;
@@ -21,7 +27,7 @@ class Animal{                                         //Abstract class
       this.#_name = name; 
     }
     else{
-      alert("Invalid name !");                //Cau lenh alert se xuat ra cua so thong bao tren trang html
+      alert("Invalid name !");                //Từ khóa alert sẽ làm xuất hiện hộp thoại thông báo trên trang html 
       throw new Error("Invalid name !");
     }
   }
@@ -40,11 +46,11 @@ class Animal{                                         //Abstract class
   get Gender(){
     return this.#_gender;
   }
-  static Print_Info(Animal)
+  static Print_Info(animal)
   {
-    document.writeln(Animal.Name +"<br>");
-    document.writeln(Animal.Gender + "<br>")
-    document.writeln(Animal.Age + "<br>")
+    document.writeln(animal.Name +"<br>");
+    document.writeln(animal.Gender + "<br>")
+    document.writeln(animal.Age + "<br>")
   }
   Move(){                                                   //Abstract method
     throw new Error("Abstract method is not implemented !");
@@ -58,7 +64,7 @@ const Normal_Status = {     //Hang so, ko the thay doi gtri
   HUNGRY: 5,
   ENERGY: 5
 }
-const GENDER ={     
+const GENDER ={           //Kieu enum GENDER   
   MALE: "male",
   FEMALE: 'female'
 }
