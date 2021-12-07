@@ -42,6 +42,7 @@ class Cat extends DvAnThit{
             alert(this.Name + " is not enough energy !");
         }
     }
+    //override lai phuong thuc Move()
     Move(){
         this.#Run();
         if(this.#_energy > 0 ){
