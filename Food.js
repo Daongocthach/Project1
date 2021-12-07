@@ -1,8 +1,8 @@
-const FOOD ={
+const FOOD ={           //Kieu enum FOOD
     FISH: "fish",
     GRASS: "grass",
     BEEF: "beef",
     PORK: "pork",
     FRUIT: "fruit"
 }
-object.freeze(FOOD);
+Object.freeze(FOOD);
