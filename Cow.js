@@ -56,6 +56,10 @@ class Cow extends DvAnTV{
         else alert(this.Name + " is full energy !");
     }
     Make_Sound(){
+        super.Make_Sound();
+        this.#Mooo();
+    }
+    #Mooo(){
         document.writeln("Mooooo.... !<br>");
     }
     #Walking(){

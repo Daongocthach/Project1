@@ -55,6 +55,10 @@ class Bird extends DvAnTV{
         else alert(this.Name + " is full energy !");
     }
     Make_Sound(){
+        super.Make_Sound();
+        this.#Chip_Chip();
+    }
+    #Chip_Chip(){
         document.writeln("Chip Chip !<br>");
     }
     #Fly(){

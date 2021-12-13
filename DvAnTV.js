@@ -22,4 +22,7 @@ class DvAnTV extends Animal{
     Move(){
         document.writeln(this.Name + " is moving !<br>");
     }
+    Make_Sound(){
+        document.writeln(this.Name + " is making a sound !<br>");
+    }
 }
