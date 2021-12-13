@@ -58,6 +58,9 @@ class Animal{                                         //Abstract class
   Eat(){
     throw new Error("Abstract method is not implemented !");
   }
+  Make_Sound(){
+    throw new Error("Abstract method is not implemented !");
+  }
 }
 const Normal_Status = {     //Hang so, ko the thay doi gtri
   MOOD: 5,
