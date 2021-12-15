@@ -49,7 +49,7 @@ class Animal{                                         //Abstract class
   static Print_Info(animal)
   {
     document.writeln(animal.Name + " information:<br>");
-    document.writeln("Animal type: " + animal._animal_type + "<br>");
+    document.writeln("Animal type: " + animal.Type + "<br>");
     document.writeln("Name: " + animal.Name + "<br>");
     document.writeln("Sex: " + animal.Gender + "<br>");
     document.writeln("Age: " + animal.Age + "<br>");
