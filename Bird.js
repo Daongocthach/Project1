@@ -1,5 +1,8 @@
 class Bird extends DvAnTV{
-    _animal_type = "Bird";
+    #_type = "Bird";
+    get Type(){
+        return this.#_type;
+    }
     #_energy = Normal_Status.ENERGY;
     #_hungry = Normal_Status.HUNGRY;
     #_mood = Normal_Status.MOOD;

@@ -1,5 +1,8 @@
 class Cow extends DvAnTV{
-    _animal_type = "Cow";
+    #_type = "Cow";
+    get Type(){
+        return this.#_type;
+    }
     #_energy = Normal_Status.ENERGY;
     #_hungry = Normal_Status.HUNGRY;
     #_mood = Normal_Status.MOOD;
