@@ -23,7 +23,7 @@ class Animal{                                         //Abstract class
     return this.#_age;
   }
   set Name(name){
-    if(name.length <=10 && name.length >0 ){
+    if(name.length >0 && name.length <=10){
       this.#_name = name; 
     }
     else{
@@ -48,9 +48,11 @@ class Animal{                                         //Abstract class
   }
   static Print_Info(animal)
   {
-    document.writeln(animal.Name +"<br>");
-    document.writeln(animal.Gender + "<br>")
-    document.writeln(animal.Age + "<br>")
+    document.writeln(animal.Name + " information:<br>");
+    document.writeln("Animal type: " + animal._animal_type + "<br>");
+    document.writeln("Name: " + animal.Name + "<br>");
+    document.writeln("Sex: " + animal.Gender + "<br>");
+    document.writeln("Age: " + animal.Age + "<br>");
   }
   Move(){                                                   //Abstract method
     throw new Error("Abstract method is not implemented !");
