@@ -1,4 +1,5 @@
 class Bird extends DvAnTV{
+    _animal_type = "Bird";
     #_energy = Normal_Status.ENERGY;
     #_hungry = Normal_Status.HUNGRY;
     #_mood = Normal_Status.MOOD;
@@ -24,8 +25,8 @@ class Bird extends DvAnTV{
         else document.writeln(bird1.Name + " and " + bird2.Name + " are equal !<br>");
     }
     Move(){
-        this.#Fly();
         if(this.#_energy > 0 ){
+            this.#Fly();
             this.#_energy--;
             this.#_hungry++;
         }
@@ -34,7 +35,7 @@ class Bird extends DvAnTV{
     Play(){
         if(this.#_energy > 0){
             document.writeln(this.Name + " is playing !<br>");
-            this.Make_Sound();
+            this.#Chip_Chip();
             this.#_mood++;
             this.#_energy--;
             this.#_hungry++;
@@ -44,7 +45,7 @@ class Bird extends DvAnTV{
     Eat(){
         super.Eat();
         this.#_hungry = 0;
-        this.Make_Sound();
+        this.#Chip_Chip();
     }
     Sleep(){
         if(this.#_energy < 10){
@@ -59,30 +60,38 @@ class Bird extends DvAnTV{
         this.#Chip_Chip();
     }
     #Chip_Chip(){
-        document.writeln("Chip Chip !<br>");
+        document.writeln(this.Name + " says Chip Chip !<br>");
     }
     #Fly(){
         document.writeln(this.Name + " is flying !<br>");
     }
     Check_Status(){
+        var flag = true;
         if(this.#_hungry > 8){
             this.#_mood = 0;
             document.writeln(this.Name + " is hungry !<br>");
+            flag = false;
         }
         else{
             document.writeln(this.Name + " is not hungry !<br>");
         }
         if(this.#_mood === 0 ){
             document.writeln(this.Name + " is not happy !<br>");
+            flag = false;
         }
         else{
             document.writeln(this.Name + " is happy !<br>");
         }
         if(this.#_energy <= 2){
             document.writeln(this.Name + " is tired !<br>");
+            flag = false;
         }
         else{
             document.writeln(this.Name + " is excited !<br>");
         }
+        if(flag === true){
+            document.writeln(this.Name + " is healthy !<br>");
+        }
+        else document.writeln(this.Name + " is not healthy !<br>")
     }
 }
