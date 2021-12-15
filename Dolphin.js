@@ -1,5 +1,8 @@
 class Dolphin extends DvAnThit{
-    _animal_type = "Dolphin";
+    #_type = "Dolphin";
+    get Type(){
+        return this.#_type;
+    }
     #_energy = Normal_Status.ENERGY;
     #_hungry = Normal_Status.HUNGRY;
     #_mood = Normal_Status.MOOD;

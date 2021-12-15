@@ -1,5 +1,8 @@
 class Cat extends DvAnThit{
-    _animal_type = "Cat";
+    #_type = "Cat";
+    get Type(){
+        return this.#_type;
+    } 
     #_energy = Normal_Status.ENERGY;            //Moi con vat khi dc khoi tao deu se co nhung chi so mac dinh
     #_hungry = Normal_Status.HUNGRY;            
     #_mood = Normal_Status.MOOD;
