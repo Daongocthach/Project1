@@ -1,4 +1,5 @@
 class Dolphin extends DvAnThit{
+    _animal_type = "Dolphin";
     #_energy = Normal_Status.ENERGY;
     #_hungry = Normal_Status.HUNGRY;
     #_mood = Normal_Status.MOOD;
@@ -26,7 +27,7 @@ class Dolphin extends DvAnThit{
     Play(){
         if(this.#_energy > 0){
             document.writeln(this.Name + " is playing !<br>");
-            this.Make_Sound();
+            this.#Ririri();
             this.#_mood++;
             this.#_energy--;
             this.#_hungry++;
@@ -36,8 +37,8 @@ class Dolphin extends DvAnThit{
         }
     }
     Move(){
-        this.#Swim();
         if(this.#_energy > 0 ){
+            this.#Swim();
             this.#_energy--;
             this.#_hungry++;
         }
@@ -49,14 +50,14 @@ class Dolphin extends DvAnThit{
     Eat(){
         super.Eat();
         this.#_hungry = 0;
-        this.Make_Sound();
+        this.#Ririri();
     }
     Make_Sound(){
         super.Make_Sound();
         this.#Ririri();
     }
     #Ririri(){
-        document.writeln("Ririri !<br>");
+        document.writeln(this.Name + " says Ririri !<br>");
     }
     Sleep(){
         if(this.#_energy < 10){

@@ -1,4 +1,5 @@
 class Cat extends DvAnThit{
+    _animal_type = "Cat";
     #_energy = Normal_Status.ENERGY;            //Moi con vat khi dc khoi tao deu se co nhung chi so mac dinh
     #_hungry = Normal_Status.HUNGRY;            
     #_mood = Normal_Status.MOOD;
@@ -28,7 +29,7 @@ class Cat extends DvAnThit{
         else document.writeln(cat1.Name + " and " + cat2.Name + " are equal !<br>")
     }
     #Meow(){
-        document.writeln("Meow !<br>");
+        document.writeln(this.Name + " says Meow !<br>");
     }
     Make_Sound(){
         super.Make_Sound();
@@ -37,7 +38,7 @@ class Cat extends DvAnThit{
     Play(){
         if(this.#_energy > 0){
             document.writeln(this.Name + " is playing !<br>");
-            this.Meow();
+            this.#Meow();
             this.#_mood++;                    
             this.#_energy--;
             this.#_hungry++;
@@ -48,8 +49,8 @@ class Cat extends DvAnThit{
     }
     //override lai phuong thuc Move()
     Move(){
-        this.#Run();
         if(this.#_energy > 0 ){
+            this.#Run();
             this.#_energy--;
             this.#_hungry++;
         }
@@ -61,7 +62,7 @@ class Cat extends DvAnThit{
     Eat(){
         super.Eat();
         this.#_hungry = 0;
-        this.Meow();
+        this.#Meow();
     }
     Sleep(){
         if(this.#_energy < 10){
