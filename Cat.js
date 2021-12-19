@@ -31,17 +31,29 @@ class Cat extends DvAnThit{
         }
         else document.writeln(cat1.Name + " and " + cat2.Name + " are equal !<br>")
     }
-    #Meow(){
-        document.writeln(this.Name + " says Meow !<br>");
-    }
     Make_Sound(){
         super.Make_Sound();
         this.#Meow();
+    }
+    #Meow(){
+        document.writeln(this.Name + " says Meow !<br>");
     }
     Play(){
         if(this.#_energy > 0){
             document.writeln(this.Name + " is playing !<br>");
             this.#Meow();
+            this.#_mood++;                    
+            this.#_energy--;
+            this.#_hungry++;
+        }
+        else{
+            alert(this.Name + " is not enough energy !");
+        }
+    }
+    Play_Console(){
+        if(this.#_energy > 0){
+            console.log(this.Name + " is playing !");
+            console.log(this.Name + " says Meow !");
             this.#_mood++;                    
             this.#_energy--;
             this.#_hungry++;
@@ -59,6 +71,14 @@ class Cat extends DvAnThit{
         }
         else alert(this.Name + " is not enough energy !");
     }
+    Move_Console(){
+        if(this.#_energy > 0 ){
+            console.log(this.Name + " is running !");
+            this.#_energy--;
+            this.#_hungry++;
+        }
+        else alert(this.Name + " is not enough energy !");
+    }
     #Run(){
         document.writeln(this.Name + " is running !<br>");
     }
@@ -67,9 +87,22 @@ class Cat extends DvAnThit{
         this.#_hungry = 0;
         this.#Meow();
     }
+    Eat_Console(){
+        console.log(this.Name + " is eating " + this.Food)
+        this.#_hungry = 0;
+        console.log(this.Name + " says Meow !");
+    }
     Sleep(){
         if(this.#_energy < 10){
             document.writeln(this.Name + " is sleeping ZZzzzz~~<br>");
+            this.#_energy++;
+            this.#_hungry++;
+        }
+        else alert(this.Name + " is full energy !");
+    }
+    Sleep_Console(){
+        if(this.#_energy < 10){
+            console.log(this.Name + " is sleeping ZZzzzz~~");
             this.#_energy++;
             this.#_hungry++;
         }
