@@ -12,6 +12,10 @@ class Cow extends DvAnTV{
         Cow.#_number_of_cows++;
         document.writeln("<br>")
     }
+    static #_number_of_cows = 0;
+    static get Number_of_cows(){
+        return Cow.#_number_of_cows;
+    }
     get Size(){
         return this.#_size;
     }
@@ -24,13 +28,17 @@ class Cow extends DvAnTV{
         }
         else document.writeln(cow1.Name + " and " + cow2.Name + " are equals !<br>");
     }
-    static #_number_of_cows = 0;
-    static get Number_of_cows(){
-        return Cow.#_number_of_cows;
-    }
     Move(){
         if(this.#_energy > 0 ){
             this.#Walking();
+            this.#_energy--;
+            this.#_hungry++;
+        }
+        else alert(this.Name + " is not enough energy !");
+    }
+    Move_Console(){
+        if(this.#_energy > 0 ){
+            console.log(this.Name + " is walking !");
             this.#_energy--;
             this.#_hungry++;
         }
@@ -46,14 +54,39 @@ class Cow extends DvAnTV{
         }
         else alert(this.Name + " is not enough energy !");
     }
+    Play_Console(){
+        if(this.#_energy > 0){
+            console.log(this.Name + " is playing !");
+            console.log(this.Name + " says Mooooo.... !");
+            this.#_mood++;                    
+            this.#_energy--;
+            this.#_hungry++;
+        }
+        else{
+            alert(this.Name + " is not enough energy !");
+        }
+    }
     Eat(){
         super.Eat();
         this.#_hungry = 0;
         this.#Mooo();
     }
+    Eat_Console(){
+        console.log(this.Name + " is eating " + this.Food)
+        this.#_hungry = 0;
+        console.log(this.Name + " says Mooooo.... !");
+    }
     Sleep(){
         if(this.#_energy < 10){
             document.writeln(this.Name + " is sleeping ZZzzzz~~~<br>");
+            this.#_energy++;
+            this.#_hungry++;
+        }
+        else alert(this.Name + " is full energy !");
+    }
+    Sleep_Console(){
+        if(this.#_energy < 10){
+            console.log(this.Name + " is sleeping ZZzzzz~~");
             this.#_energy++;
             this.#_hungry++;
         }
@@ -64,7 +97,7 @@ class Cow extends DvAnTV{
         this.#Mooo();
     }
     #Mooo(){
-        document.writeln(this.Name + " says Mooooo.... !<br>");
+        docutment.writeln(this.Name + " says Mooooo.... !");
     }
     #Walking(){
         document.writeln(this.Name + " is walking !<br>");
@@ -97,5 +130,5 @@ class Cow extends DvAnTV{
             document.writeln(this.Name + " is healthy !<br>");
         }
         else document.writeln(this.Name + " is not healthy !<br>")
-    }
+    }z
 }
